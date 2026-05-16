@@ -1,0 +1,18 @@
+# Environments
+
+venv/
+env/
+.env
+
+
+# Pytest and Cache
+.pytest_cache/
+__pycache__/
+*.pyc 
+
+# Playwright artifacts
+test-results/
+playwright-report/
+blob-report/
+
+
