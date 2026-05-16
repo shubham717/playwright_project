@@ -52,11 +52,11 @@ jobs:
 
     - name: Upload Test 
       uses: actions/upload-artifact@v4
-        if: ${{ !cancelled()}} # uploads artifacts even if tests fail
-        with:
-          name: playwright-test-result
-          path: test-results/
-          retentioon-days: 14
+      if: ${{ !cancelled() }} # uploads artifacts even if tests fail
+      with:
+        name: playwright-test-result
+        path: test-results/
+        retentioon-days: 14
 
     
 
