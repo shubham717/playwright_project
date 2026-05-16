@@ -16,10 +16,10 @@ jobs:
         with:
           fetch-depth : 0
       - name: Run Gitleaks
-        uses: gileaks/gitleaks-action@v2
+        uses: gitleaks/gitleaks-action@v2
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
 
 
   
