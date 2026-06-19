@@ -9,4 +9,3 @@ def test_bms_navigation(page, config):
 
     bms_home.click_movies_tab()
     assert "Movies" in bms_home.get_title()
-
