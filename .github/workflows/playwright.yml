@@ -12,8 +12,7 @@ on:
 
   #2 Daily scheduled runs (In UTC)
   schedule:
-    - cron: '30 03 * * *' #Runs at 9:00 AM IST
-    - cron: '30 12 * * *' #Runs at 6:p00 PM IST
+    - cron: '30 04 * * *' #Runs at 9:00 AM IST
 
 jobs:
   test:
