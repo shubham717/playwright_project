@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import pytest
 from playwright.sync_api import Playwright, APIRequestContext
 
@@ -20,4 +18,3 @@ def weather_api(playwright: Playwright) -> APIRequestContext:
     yield context
     context.dispose()
 
->>>>>>> Stashed changes

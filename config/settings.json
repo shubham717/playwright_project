@@ -1,0 +1,9 @@
+{
+    "environments":
+    {
+        "bookmyshow":
+        {
+            "base_url" : "https://in.bookmyshow.com/"
+        }
+    }
+}

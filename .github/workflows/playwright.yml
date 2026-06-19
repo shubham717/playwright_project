@@ -57,6 +57,3 @@ jobs:
         name: playwright-test-result
         path: test-results/
         retentioon-days: 14
-
-    
-
