@@ -42,7 +42,7 @@ jobs:
       run: |
         # if manually triggered with marker, run specific tests.
         # Otherwise, run the entire test suite.
-        if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.marker }}" != ""]]; then
+        if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.marker }}" != "" ]]; then
           echo "Running tests with marker: ${{ inputs.marker }}"
           pytest -m "${{ inputs.marker }}"
         else

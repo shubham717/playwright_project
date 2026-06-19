@@ -13,6 +13,7 @@ def test_weather_api_pune(weather_api) -> None:
     assert response.ok, f"API Request failed with status code: {response.status}"
 
     response_body = response.json()
+ 
 
     assert "hourly" in response_body, "Response missing 'hourly' data object."
 
