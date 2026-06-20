@@ -4,6 +4,21 @@ import shutil
 from pathlib import Path
 from playwright.sync_api import Playwright, APIRequestContext
 
+@pytest.fixture(scope="session", autouse=True)
+def create_and_protect_output_dir():
+    # Define your directory name
+    target_dir = os.path.abspath("my_test_outputs")
+    
+    # Force create it if it doesn't exist
+    if not os.path.exists(target_dir):
+        os.makedirs(target_dir, exist_ok=True)
+        
+    yield  # This is where your tests run
+    
+    # Teardown safety check: Force create it again if a hook deleted it
+    if not os.path.exists(target_dir):
+        os.makedirs(target_dir, exist_ok=True)
+        
 # def pytest_configure(config):
 #     """Manages the test-results folder safely to prevent deletion conflicts."""
     
