@@ -55,4 +55,4 @@ jobs:
       with:
         name: playwright-test-result
         path: test-results/
-        retentioon-days: 14
+        retention-days: 14

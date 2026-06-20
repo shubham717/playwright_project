@@ -1,5 +1,24 @@
 import pytest
+import os
+import shutil
+from pathlib import Path
 from playwright.sync_api import Playwright, APIRequestContext
+
+# def pytest_configure(config):
+#     """Manages the test-results folder safely to prevent deletion conflicts."""
+    
+#     # 1. Look for the directory assigned via --html
+#     htmlpath = config.getoption("--html")
+    
+#     if htmlpath:
+#         report_dir = Path(htmlpath).parent
+        
+#         # 2. Manually wipe out previous results right here (Full Overwrite)
+#         if report_dir.exists():
+#             shutil.rmtree(report_dir)
+            
+#         # 3. Recreate it fresh
+#         report_dir.mkdir(parents=True, exist_ok=True)
 
 @pytest.fixture(scope="session")
 def API_Setup(playwright: Playwright) -> APIRequestContext:
@@ -17,4 +36,10 @@ def weather_api(playwright: Playwright) -> APIRequestContext:
     context = playwright.request.new_context(base_url = "https://api.open-meteo.com")
     yield context
     context.dispose()
+
+@pytest.fixture(scope="session", autouse=True)
+def stop_playwright_cleanup(pytestconfig):
+    """Forces pytest-playwright not to purge the output directory mid-run."""
+    # This disables the internal flag that makes the folder vanish
+    pytestconfig.option.no_summary_clean = True
 
