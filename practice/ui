@@ -1,0 +1,5 @@
+import pytest
+from playwright.sync_api import Page, expect, Playwright, APIRequestContext
+
+def test_scroll_to_click(page:Page):
+    
